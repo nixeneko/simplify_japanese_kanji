@@ -33,10 +33,11 @@ const inputarea = document.getElementById("inputarea");
 
 //inputarea.addEventListener('change', changed);
 inputarea.addEventListener('input', changed);
+inputarea.addEventListener('compositionend', changed);
 
 function changed(e) { 
   if(!e.isComposing) {
-    console.log(e.srcElement.value);
+    console.log(e.srcElement.value, e.isComposing);
 	e.srcElement.value = convert(e.srcElement.value);
   }
 }
